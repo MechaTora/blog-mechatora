@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="宝くじ高額当選売場マップの開発秘話。Leaflet.jsでの地図実装、CSVデータ処理、マーカークラスタリング、Firebase Hostingでのデプロイまで、実際の開発プロセスを詳しく解説します。">
+    <meta name="keywords" content="Leaflet.js,地図アプリ,宝くじ,マップ開発,JavaScript,Firebase,データ可視化">
+    <title>宝くじ高額当選売場マップの開発 - 地図アプリ実装の実践 | MechaToraのブログ</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "宝くじ高額当選売場マップの開発",
+        "description": "宝くじ高額当選売場マップの開発秘話。Leaflet.jsでの地図実装、CSVデータ処理、マーカークラスタリングなど、実際の開発プロセスを詳しく解説します。",
+        "author": {
+            "@type": "Person",
+            "name": "MechaTora"
+        },
+        "datePublished": "2025-10-29",
+        "dateModified": "2025-10-29",
+        "image": "https://blog.mechatora.com/images/lottery-map-dev.jpg",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MechaToraのブログ",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://blog.mechatora.com/images/logo.png"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="../index.html">MechaToraのブログ</a></h1>
+            <nav>
+                <a href="../index.html">ホーム</a>
+                <a href="../articles.html">記事一覧</a>
+                <a href="../about.html">運営者情報</a>
+                <a href="../contact.html">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="../index.html">ホーム</a> &gt;
+        <a href="../articles.html">記事一覧</a> &gt;
+        <span>宝くじ高額当選売場マップの開発</span>
+    </nav>
+
+    <main>
+        <article>
+            <div class="article-header">
+                <span class="category tech">技術・開発</span>
+                <h1>宝くじ高額当選売場マップの開発 - 地図アプリ実装の実践</h1>
+                <div class="article-meta">
+                    <time datetime="2025-10-29">2025年10月29日</time>
+                    <span class="reading-time">📖 約10分</span>
+                </div>
+            </div>
+
+            <div class="lead">
+                <p>「高額当選が出やすい宝くじ売場はどこだろう？」——そんな疑問から始まったのが、「宝くじ高額当選売場マップ」の開発プロジェクトです。全国の宝くじ売場データをGoogleマップ風に可視化し、ユーザーが近くの当選実績がある売場を簡単に探せるツールを作りました。</p>
+                <p>この記事では、Leaflet.jsを使った地図アプリの実装、300件以上の売場データの処理、マーカークラスタリング、Firebase Hostingでのデプロイまで、開発の全プロセスを詳しく解説します。地図アプリを作りたい方の参考になれば幸いです。</p>
+            </div>
+
+            <h2>プロジェクトの概要</h2>
+
+            <h3>開発の動機</h3>
+            <p>きっかけは、年末ジャンボ宝くじを買う前に「どこで買うのがいいか？」と調べたことでした。宝くじ公式サイトには高額当選売場のリストはあるものの、テキストの羅列で非常に見にくい。地図上で一目で分かるツールがあれば便利だと思い、開発を決意しました。</p>
+
+            <h3>主な機能</h3>
+            <ul>
+                <li><strong>地図上に売場を表示</strong>：300以上の高額当選売場をマーカー表示</li>
+                <li><strong>マーカークラスタリング</strong>：ズームアウト時に近接マーカーをまとめる</li>
+                <li><strong>売場詳細表示</strong>：クリックで当選実績、住所、営業時間を表示</li>
+                <li><strong>現在地から検索</strong>：GPS機能で最寄りの売場を表示</li>
+                <li><strong>都道府県別フィルター</strong>：地域を絞って検索</li>
+            </ul>
+
+            <h3>技術スタック</h3>
+            <ul>
+                <li><strong>地図ライブラリ</strong>：Leaflet.js</li>
+                <li><strong>クラスタリング</strong>：Leaflet.markercluster</li>
+                <li><strong>データ形式</strong>：CSV → JSON変換</li>
+                <li><strong>ホスティング</strong>：Firebase Hosting</li>
+                <li><strong>開発期間</strong>：約2週間（実働20時間）</li>
+            </ul>
+
+            <h2>なぜLeaflet.jsを選んだか</h2>
+
+            <h3>Google Maps API との比較</h3>
+            <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                    <tr style="background-color: #f3f4f6;">
+                        <th style="border: 1px solid #d1d5db; padding: 0.75rem;">項目</th>
+                        <th style="border: 1px solid #d1d5db; padding: 0.75rem;">Google Maps API</th>
+                        <th style="border: 1px solid #d1d5db; padding: 0.75rem;">Leaflet.js</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">料金</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">月28,000読み込みまで無料<br>超過で従量課金</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">完全無料</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">導入</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">APIキー必要</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">CDNで即利用可能</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">カスタマイズ</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">★★★☆☆</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">★★★★★</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">軽量性</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">★★☆☆☆</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">★★★★★</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">機能</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">★★★★★</td>
+                        <td style="border: 1px solid #d1d5db; padding: 0.75rem;">★★★★☆</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>個人開発で無料運用を重視したため、Leaflet.jsを選択しました。</p>
+
+            <h3>Leaflet.jsのメリット</h3>
+            <ul>
+                <li><strong>完全無料</strong>：商用利用もOK、制限なし</li>
+                <li><strong>軽量</strong>：39KBのみ（Google Maps APIの1/10以下）</li>
+                <li><strong>プラグイン豊富</strong>：クラスタリング、ヒートマップなど</li>
+                <li><strong>学習コスト低</strong>：ドキュメントが分かりやすい</li>
+            </ul>
+
+            <h2>開発ステップ1：基本的な地図の表示</h2>
+
+            <h3>Leaflet.jsの導入</h3>
+            <p>CDN経由で簡単に導入できます：</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /&gt;
+    &lt;script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="map"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <h3>地図の初期化</h3>
+            <pre><code>// 地図を初期化（東京駅を中心に表示）
+const map = L.map('map').setView([35.6812, 139.7671], 13);
+
+// タイル層を追加（OpenStreetMap）
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+}).addTo(map);</code></pre>
+
+            <p>これだけで、インタラクティブな地図が表示されます！</p>
+
+            <h3>マーカーの追加</h3>
+            <pre><code>// 西銀座チャンスセンターにマーカーを追加
+const marker = L.marker([35.6717, 139.7643]).addTo(map);
+
+// ポップアップを追加
+marker.bindPopup('&lt;b&gt;西銀座チャンスセンター&lt;/b&gt;&lt;br&gt;高額当選多数！');</code></pre>
+
+            <h2>開発ステップ2：データの準備と処理</h2>
+
+            <h3>データ収集</h3>
+            <p>宝くじ公式サイトから高額当選売場のデータをスクレイピング...と思いましたが、利用規約でNGだったため、手動でCSVファイルを作成しました。</p>
+
+            <h4>CSVファイル例（lottery_shops.csv）</h4>
+            <pre><code>name,address,prefecture,lat,lng,wins,notes
+西銀座チャンスセンター,東京都中央区銀座4-1,東京都,35.6717,139.7643,523,1等最多
+大阪駅前第4ビル特設売場,大阪府大阪市北区梅田1-11-4,大阪府,34.7024,135.4959,312,近畿最多
+名駅前チャンスセンター,愛知県名古屋市中村区名駅1-1-4,愛知県,35.1706,136.8816,187,中部最多</code></pre>
+
+            <h3>CSVをJSONに変換</h3>
+            <p>Excelで編集しやすいCSVで管理し、JavaScriptでJSONに変換：</p>
+            <pre><code>// Papa Parse ライブラリを使用（CDN経由）
+// &lt;script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"&gt;&lt;/script&gt;
+
+Papa.parse('lottery_shops.csv', {
+    download: true,
+    header: true,
+    complete: function(results) {
+        const shops = results.data;
+        addMarkersToMap(shops);
+    }
+});</code></pre>
+
+            <h3>複数マーカーの追加</h3>
+            <pre><code>function addMarkersToMap(shops) {
+    shops.forEach(shop => {
+        // 座標が有効な場合のみマーカー追加
+        if (shop.lat && shop.lng) {
+            const marker = L.marker([parseFloat(shop.lat), parseFloat(shop.lng)])
+                .addTo(map);
+
+            // ポップアップ内容
+            const popupContent = `
+                &lt;div class="shop-popup"&gt;
+                    &lt;h3&gt;${shop.name}&lt;/h3&gt;
+                    &lt;p&gt;&lt;strong&gt;住所:&lt;/strong&gt; ${shop.address}&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;高額当選:&lt;/strong&gt; ${shop.wins}回&lt;/p&gt;
+                    &lt;p&gt;${shop.notes}&lt;/p&gt;
+                &lt;/div&gt;
+            `;
+
+            marker.bindPopup(popupContent);
+        }
+    });
+}</code></pre>
+
+            <h2>開発ステップ3：マーカークラスタリング</h2>
+
+            <h3>問題：マーカーが多すぎて見づらい</h3>
+            <p>300個以上のマーカーを全て表示すると、地図がマーカーだらけで非常に見づらくなりました。特に東京都内は売場が密集しており、マーカーが重なって個別にクリックできません。</p>
+
+            <h3>解決策：Leaflet.markercluster</h3>
+            <p>ズームレベルに応じて、近接するマーカーを自動的にまとめるプラグインを導入：</p>
+            <pre><code>&lt;!-- CDN でクラスタリングプラグインを読み込み --&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" /&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" /&gt;
+&lt;script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"&gt;&lt;/script&gt;</code></pre>
+
+            <h3>クラスタリングの実装</h3>
+            <pre><code>// マーカークラスターグループを作成
+const markers = L.markerClusterGroup({
+    // クラスターアイコンのカスタマイズ
+    iconCreateFunction: function(cluster) {
+        const count = cluster.getChildCount();
+        let size = 'small';
+        if (count > 100) size = 'large';
+        else if (count > 20) size = 'medium';
+
+        return L.divIcon({
+            html: `&lt;div&gt;&lt;span&gt;${count}&lt;/span&gt;&lt;/div&gt;`,
+            className: 'marker-cluster marker-cluster-' + size,
+            iconSize: L.point(40, 40)
+        });
+    },
+    // 最大ズームレベル（これ以上拡大するとクラスター解除）
+    disableClusteringAtZoom: 18
+});
+
+// マーカーをクラスターグループに追加
+shops.forEach(shop => {
+    if (shop.lat && shop.lng) {
+        const marker = L.marker([parseFloat(shop.lat), parseFloat(shop.lng)]);
+        marker.bindPopup(createPopupContent(shop));
+        markers.addLayer(marker);
+    }
+});
+
+// クラスターグループを地図に追加
+map.addLayer(markers);</code></pre>
+
+            <h3>クラスターアイコンのスタイリング</h3>
+            <pre><code>.marker-cluster {
+    background-color: rgba(37, 99, 235, 0.6);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.marker-cluster-small {
+    width: 40px;
+    height: 40px;
+}
+
+.marker-cluster-medium {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(234, 88, 12, 0.6);
+}
+
+.marker-cluster-large {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(220, 38, 38, 0.6);
+}</code></pre>
+
+            <p>これにより、ズームアウト時は「東京都: 85件」のようにまとめて表示され、ズームインすると個別のマーカーが表示されるようになりました。</p>
+
+            <h2>開発ステップ4：検索とフィルター機能</h2>
+
+            <h3>都道府県別フィルター</h3>
+            <pre><code>// HTMLセレクトボックス
+&lt;select id="prefecture-filter"&gt;
+    &lt;option value=""&gt;全国&lt;/option&gt;
+    &lt;option value="東京都"&gt;東京都&lt;/option&gt;
+    &lt;option value="大阪府"&gt;大阪府&lt;/option&gt;
+    &lt;!-- ... その他の都道府県 --&gt;
+&lt;/select&gt;
+
+// JavaScript
+document.getElementById('prefecture-filter').addEventListener('change', (e) => {
+    const selectedPref = e.target.value;
+
+    // 既存のマーカーをクリア
+    markers.clearLayers();
+
+    // フィルタリングして再追加
+    const filteredShops = selectedPref
+        ? shops.filter(shop => shop.prefecture === selectedPref)
+        : shops;
+
+    filteredShops.forEach(shop => {
+        if (shop.lat && shop.lng) {
+            const marker = L.marker([parseFloat(shop.lat), parseFloat(shop.lng)]);
+            marker.bindPopup(createPopupContent(shop));
+            markers.addLayer(marker);
+        }
+    });
+
+    // 選択された地域に地図を移動
+    if (selectedPref && filteredShops.length > 0) {
+        const bounds = L.latLngBounds(
+            filteredShops.map(shop => [parseFloat(shop.lat), parseFloat(shop.lng)])
+        );
+        map.fitBounds(bounds);
+    }
+});</code></pre>
+
+            <h3>現在地から最寄りの売場を探す</h3>
+            <pre><code>document.getElementById('find-nearby').addEventListener('click', () => {
+    if (!navigator.geolocation) {
+        alert('お使いのブラウザは位置情報をサポートしていません');
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const userLat = position.coords.latitude;
+            const userLng = position.coords.longitude;
+
+            // ユーザーの位置にマーカー追加
+            L.marker([userLat, userLng], {
+                icon: L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41]
+                })
+            }).addTo(map).bindPopup('現在地').openPopup();
+
+            // 地図を現在地に移動
+            map.setView([userLat, userLng], 14);
+
+            // 最寄りの売場を計算
+            const nearest = findNearestShop(userLat, userLng, shops);
+            if (nearest) {
+                alert(`最寄りの高額当選売場: ${nearest.name}（約${nearest.distance.toFixed(1)}km）`);
+            }
+        },
+        (error) => {
+            alert('位置情報の取得に失敗しました');
+        }
+    );
+});
+
+function findNearestShop(userLat, userLng, shops) {
+    let nearestShop = null;
+    let minDistance = Infinity;
+
+    shops.forEach(shop => {
+        if (shop.lat && shop.lng) {
+            const distance = calculateDistance(
+                userLat, userLng,
+                parseFloat(shop.lat), parseFloat(shop.lng)
+            );
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestShop = { ...shop, distance };
+            }
+        }
+    });
+
+    return nearestShop;
+}
+
+// Haversine公式で2点間の距離を計算（km）
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // 地球の半径（km）
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}</code></pre>
+
+            <h2>開発ステップ5：Firebase Hostingでデプロイ</h2>
+
+            <h3>Firebase Hostingを選んだ理由</h3>
+            <ul>
+                <li><strong>無料</strong>：月10GBまで無料（個人開発には十分）</li>
+                <li><strong>HTTPS自動</strong>：SSL証明書が自動で設定される</li>
+                <li><strong>高速</strong>：CDN経由で配信</li>
+                <li><strong>簡単</strong>：CLIコマンド1つでデプロイ</li>
+            </ul>
+
+            <h3>デプロイ手順</h3>
+            <pre><code># 1. Firebase CLIをインストール
+npm install -g firebase-tools
+
+# 2. Firebaseにログイン
+firebase login
+
+# 3. プロジェクトを初期化
+firebase init hosting
+
+# 質問に回答:
+# - Use an existing project → 既存プロジェクトを選択（または新規作成）
+# - What do you want to use as your public directory? → public
+# - Configure as a single-page app? → No
+# - Set up automatic builds and deploys with GitHub? → No
+
+# 4. HTMLファイルをpublicフォルダに配置
+
+# 5. デプロイ
+firebase deploy
+
+# デプロイ完了！ https://your-project.web.app/ でアクセス可能</code></pre>
+
+            <h2>苦労した点と解決策</h2>
+
+            <h3>1. 緯度経度の取得</h3>
+            <p><strong>問題</strong>：売場の住所から緯度経度を手動で調べるのが大変（300件以上）</p>
+            <p><strong>解決策</strong>：Google Geocoding APIで一括変換</p>
+            <pre><code>// Node.jsスクリプトで一括変換
+const axios = require('axios');
+const fs = require('fs');
+
+async function geocodeAddress(address) {
+    const API_KEY = 'YOUR_GOOGLE_API_KEY';
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${API_KEY}`;
+
+    const response = await axios.get(url);
+    if (response.data.results.length > 0) {
+        const location = response.data.results[0].geometry.location;
+        return { lat: location.lat, lng: location.lng };
+    }
+    return null;
+}
+
+// CSVファイルを読み込んで緯度経度を追加
+// （実装は省略）</code></pre>
+
+            <h3>2. モバイル対応</h3>
+            <p><strong>問題</strong>：スマホで見るとマーカーが小さくてタップしにくい</p>
+            <p><strong>解決策</strong>：レスポンシブデザイン + タッチ最適化</p>
+            <pre><code>/* モバイル対応 */
+@media (max-width: 768px) {
+    #map {
+        height: 400px; /* PC: 600px → スマホ: 400px */
+    }
+
+    .leaflet-popup-content {
+        font-size: 14px;
+        max-width: 250px;
+    }
+
+    /* マーカーを少し大きく */
+    .leaflet-marker-icon {
+        transform: scale(1.2);
+    }
+}</code></pre>
+
+            <h3>3. 読み込み速度</h3>
+            <p><strong>問題</strong>：300件のマーカーを一度に読み込むと遅い</p>
+            <p><strong>解決策</strong>：遅延読み込み + クラスタリング</p>
+            <ul>
+                <li>初期表示は現在のビューポート内のマーカーのみ</li>
+                <li>地図移動時に追加読み込み</li>
+                <li>クラスタリングで描画負荷を軽減</li>
+            </ul>
+
+            <h2>まとめ</h2>
+
+            <h3>開発で学んだこと</h3>
+            <ol>
+                <li><strong>Leaflet.jsは個人開発に最適</strong>：無料、軽量、簡単</li>
+                <li><strong>クラスタリングは必須</strong>：100件以上のマーカーには必須機能</li>
+                <li><strong>データ整備が重要</strong>：緯度経度の精度がUXを左右する</li>
+                <li><strong>Firebase Hostingは便利</strong>：無料でHTTPS、CDN、自動デプロイ</li>
+            </ol>
+
+            <h3>今後の改善予定</h3>
+            <ul>
+                <li>当選実績のグラフ表示（Chart.js）</li>
+                <li>ルート検索機能（最寄り駅からのルート）</li>
+                <li>ユーザーレビュー機能</li>
+                <li>年末ジャンボなどイベント時の混雑予測</li>
+            </ul>
+
+            <p>地図アプリは、データさえあれば比較的簡単に作れます。Leaflet.jsを使えば、Google Maps APIのようなコストを気にせず、自由にカスタマイズできます。ぜひ、あなたも何か地図アプリを作ってみてください！</p>
+
+            <div class="related-articles">
+                <h3>関連記事</h3>
+                <ul>
+                    <li><a href="earthquake-monitor-tech.html">地震モニターアプリの開発</a></li>
+                    <li><a href="cook-suggest-development.html">料理提案アプリの開発秘話</a></li>
+                    <li><a href="qualification-calendar-dev.html">資格試験カレンダーの開発</a></li>
+                    <li><a href="pwa-implementation-guide.html">PWA実装の基礎</a></li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../index.html">ホーム</a>
+                <a href="../articles.html">記事一覧</a>
+                <a href="../about.html">運営者情報</a>
+                <a href="../privacy.html">プライバシーポリシー</a>
+                <a href="../contact.html">お問い合わせ</a>
+            </div>
+            <p>&copy; 2025 MechaToraのブログ. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

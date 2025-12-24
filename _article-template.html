@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[記事の要約を120文字程度で記入]">
+    <meta name="keywords" content="[キーワード1],[キーワード2],[キーワード3]">
+    <title>[記事タイトル] | MechaToraのブログ</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[記事タイトル]",
+        "description": "[記事の要約]",
+        "author": {
+            "@type": "Person",
+            "name": "MechaTora"
+        },
+        "datePublished": "[YYYY-MM-DD]",
+        "dateModified": "[YYYY-MM-DD]"
+    }
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <span>🐱</span>
+                    <span>MechaToraのブログ</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">ホーム</a></li>
+                        <li><a href="../articles.html">記事一覧</a></li>
+                        <li><a href="../about.html">運営者情報</a></li>
+                        <li><a href="../contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- パンくずリスト -->
+    <div class="container">
+        <nav class="breadcrumb">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../articles.html">記事一覧</a></li>
+                <li><a href="../articles.html#[カテゴリID]">[カテゴリ名]</a></li>
+                <li>[記事タイトル]</li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <div class="container">
+            <div class="content-wrapper">
+                <article>
+                    <!-- 記事メタ情報 -->
+                    <div class="article-meta" style="margin-bottom: 2rem;">
+                        <span class="article-category">[カテゴリ名]</span>
+                        <time datetime="[YYYY-MM-DD]">[YYYY年MM月DD日]</time>
+                        <span style="margin-left: 1rem; color: var(--text-secondary);">更新日: [YYYY年MM月DD日]</span>
+                    </div>
+
+                    <!-- 記事タイトル -->
+                    <h1>[記事タイトル]</h1>
+
+                    <!-- リード文（導入） -->
+                    <p style="font-size: 1.125rem; line-height: 1.8; padding: 1.5rem; background: var(--bg-secondary); border-left: 4px solid var(--primary-color); margin: 2rem 0;">
+                        [記事の要約・読者への問いかけ・この記事で得られることを2-3文で]
+                    </p>
+
+                    <!-- 記事本文 -->
+                    <h2>[大見出し1]</h2>
+                    <p>
+                        [本文]
+                    </p>
+
+                    <h3>[中見出し1-1]</h3>
+                    <p>
+                        [本文]
+                    </p>
+
+                    <h2>[大見出し2]</h2>
+                    <p>
+                        [本文]
+                    </p>
+
+                    <!-- まとめセクション -->
+                    <h2>まとめ</h2>
+                    <p>
+                        [記事の要点を3-5項目でまとめる]
+                    </p>
+                    <ul>
+                        <li>[ポイント1]</li>
+                        <li>[ポイント2]</li>
+                        <li>[ポイント3]</li>
+                    </ul>
+
+                    <!-- 関連記事 -->
+                    <div style="margin-top: 4rem; padding: 2rem; background: var(--bg-secondary); border-radius: 8px;">
+                        <h3 style="margin-bottom: 1rem;">📚 関連記事</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.75rem;">
+                                <a href="[関連記事URL]" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">→ [関連記事タイトル]</a>
+                            </li>
+                            <li style="margin-bottom: 0.75rem;">
+                                <a href="[関連記事URL]" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">→ [関連記事タイトル]</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 記事フッター -->
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary);">
+                        <p>この記事が役に立ったら、ぜひシェアしてください！</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MechaToraのブログ</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                        社労士×エンジニアのMechaToraが運営する技術ブログです。
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>カテゴリー</h3>
+                    <ul>
+                        <li><a href="../articles.html#tech">技術・開発</a></li>
+                        <li><a href="../articles.html#career">キャリア・資格</a></li>
+                        <li><a href="../articles.html#datascience">データサイエンス</a></li>
+                        <li><a href="../articles.html#misc">雑記</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サイト情報</h3>
+                    <ul>
+                        <li><a href="../about.html">運営者情報</a></li>
+                        <li><a href="../privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="../contact.html">お問い合わせ</a></li>
+                        <li><a href="https://mechatora.com" target="_blank" rel="noopener">MechaTora（開発ツール）</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MechaTora. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
