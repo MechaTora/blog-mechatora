@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: MechaTora/blog-mechatora
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: 'ja'
+
+collections:
+  - name: "articles"
+    label: "記事"
+    folder: "articles/content"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "カテゴリ", name: "category", widget: "select", options: ["技術・開発", "キャリア・資格", "データサイエンス", "雑記"]}
+      - {label: "説明", name: "description", widget: "text"}
+      - {label: "キーワード", name: "keywords", widget: "string"}
+      - {label: "本文", name: "body", widget: "markdown"}
+      - {label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false}

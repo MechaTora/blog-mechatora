@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" id="meta-description">
+    <meta name="keywords" content="" id="meta-keywords">
+    <title id="page-title">MechaToraのブログ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span>🐱</span>
+                    <span>MechaToraのブログ</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="articles.html">記事一覧</a></li>
+                        <li><a href="about.html">運営者情報</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- パンくずリスト -->
+    <div class="container">
+        <nav class="breadcrumb">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="articles.html">記事一覧</a></li>
+                <li id="breadcrumb-title">記事</li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <div class="container">
+            <div class="content-wrapper">
+                <article>
+                    <div id="article-loading" style="text-align: center; padding: 3rem;">
+                        <p>記事を読み込んでいます...</p>
+                    </div>
+                    <div id="article-error" style="display: none; text-align: center; padding: 3rem;">
+                        <h2>記事が見つかりません</h2>
+                        <p><a href="articles.html">記事一覧に戻る</a></p>
+                    </div>
+                    <div id="article-content" style="display: none;">
+                        <h1 id="article-title"></h1>
+                        <div class="article-meta" style="color: var(--text-secondary); margin: 1rem 0; font-size: 0.875rem;">
+                            <span id="article-date"></span>
+                            <span style="margin: 0 0.5rem;">|</span>
+                            <span id="article-category"></span>
+                        </div>
+                        <div id="article-body" style="margin-top: 2rem;"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MechaToraのブログ</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                        社労士×エンジニアのMechaToraが運営する技術ブログです。
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>カテゴリー</h3>
+                    <ul>
+                        <li><a href="articles.html#tech">技術・開発</a></li>
+                        <li><a href="articles.html#career">キャリア・資格</a></li>
+                        <li><a href="articles.html#datascience">データサイエンス</a></li>
+                        <li><a href="articles.html#misc">雑記</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サイト情報</h3>
+                    <ul>
+                        <li><a href="about.html">運営者情報</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="https://mechatora.com" target="_blank" rel="noopener">MechaTora（開発ツール）</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MechaTora. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // URLパラメータから記事のslugを取得
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get('slug');
+
+        if (!slug) {
+            document.getElementById('article-loading').style.display = 'none';
+            document.getElementById('article-error').style.display = 'block';
+        } else {
+            // Markdownファイルを読み込み
+            fetch(`articles/content/${slug}.md`)
+                .then(response => {
+                    if (!response.ok) throw new Error('記事が見つかりません');
+                    return response.text();
+                })
+                .then(content => {
+                    // Front matterとMarkdown本文を分離
+                    const parts = content.split('---\n');
+                    let frontMatter = {};
+                    let markdown = content;
+
+                    if (parts.length >= 3) {
+                        // Front matterがある場合
+                        try {
+                            frontMatter = jsyaml.load(parts[1]);
+                            markdown = parts.slice(2).join('---\n');
+                        } catch (e) {
+                            console.error('Front matter parse error:', e);
+                        }
+                    }
+
+                    // メタ情報を設定
+                    const title = frontMatter.title || '無題の記事';
+                    const date = frontMatter.date ? new Date(frontMatter.date).toLocaleDateString('ja-JP') : '';
+                    const category = frontMatter.category || '';
+                    const description = frontMatter.description || '';
+                    const keywords = frontMatter.keywords || '';
+
+                    document.getElementById('page-title').textContent = `${title} | MechaToraのブログ`;
+                    document.getElementById('meta-description').setAttribute('content', description);
+                    document.getElementById('meta-keywords').setAttribute('content', keywords);
+                    document.getElementById('breadcrumb-title').textContent = title;
+                    document.getElementById('article-title').textContent = title;
+                    document.getElementById('article-date').textContent = date;
+                    document.getElementById('article-category').textContent = category;
+
+                    // MarkdownをHTMLに変換
+                    const htmlContent = marked.parse(markdown);
+                    document.getElementById('article-body').innerHTML = htmlContent;
+
+                    // 表示切り替え
+                    document.getElementById('article-loading').style.display = 'none';
+                    document.getElementById('article-content').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error loading article:', error);
+                    document.getElementById('article-loading').style.display = 'none';
+                    document.getElementById('article-error').style.display = 'block';
+                });
+        }
+    </script>
+</body>
+</html>
