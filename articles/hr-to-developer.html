@@ -24,6 +24,43 @@
         "dateModified": "2024-12-25"
     }
     </script>
+
+    <!-- Google Analytics (準備完了 - GA4測定IDを設定してください) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+
+    <!-- パンくずリスト構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://blog.mechatora.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "記事一覧",
+                "item": "https://blog.mechatora.com/articles.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "社労士×エンジニアという働き方｜スキルを掛け合わせて市場価値を高める",
+                "item": "https://blog.mechatora.com/articles/hr-to-developer.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- ヘッダー -->
@@ -72,6 +109,11 @@
 
                     <!-- 記事タイトル -->
                     <h1>社労士×エンジニアという働き方｜スキルを掛け合わせて市場価値を高める</h1>
+        <div class="article-date" style="margin: 1.5rem 0; padding: 1rem; background: var(--bg-secondary); border-left: 4px solid var(--primary-color); font-size: 0.875rem; color: var(--text-secondary);">
+            <span style="margin-right: 1rem;">📅 公開日: 2025年1月15日</span>
+            <span>🔄 最終更新: 2025年1月15日</span>
+        </div>
+
         <div class="article-hero" style="margin: 2rem 0; border-radius: 8px; overflow: hidden;">
             <img src="../images/career-default.svg" alt="記事のアイキャッチ画像" style="width: 100%; height: auto; display: block;">
         </div>
@@ -402,5 +444,32 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // 目次を自動生成
+        document.addEventListener('DOMContentLoaded', function() {
+            const article = document.querySelector('article');
+            if (!article) return;
+
+            const headings = article.querySelectorAll('h2');
+            if (headings.length < 2) return;
+
+            let tocHTML = '<div class="table-of-contents" style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;"><h3 style="margin: 0 0 1rem 0; font-size: 1.125rem;">📑 目次</h3><ul style="margin: 0; padding-left: 1.5rem; line-height: 2;">';
+
+            headings.forEach((heading, index) => {
+                const id = `section-${index}`;
+                heading.id = id;
+                tocHTML += `<li><a href="#${id}" style="color: var(--primary-color); text-decoration: none;">${heading.textContent}</a></li>`;
+            });
+
+            tocHTML += '</ul></div>';
+
+            const firstH2 = article.querySelector('h2');
+            if (firstH2) {
+                firstH2.insertAdjacentHTML('beforebegin', tocHTML);
+            }
+        });
+    </script>
+    <script src="../cookie-banner.js"></script>
 </body>
 </html>

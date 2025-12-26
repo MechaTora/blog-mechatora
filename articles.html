@@ -7,6 +7,15 @@
     <title>記事一覧 | MechaToraのブログ</title>    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics (準備完了 - GA4測定IDを設定してください) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
 </head>
 <body>
     <!-- ヘッダー -->
@@ -56,37 +65,512 @@
             <section id="tech" style="margin-bottom: 4rem;">
                 <h2 style="font-size: 1.75rem; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">💻 技術・開発</h2>
 
-                <!-- 記事リストはここに追加 -->
-                <p style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: 8px; color: var(--text-secondary);">
-                    記事を準備中です...既存11記事 + 新規19記事を追加予定
-                </p>
+                
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="Claude Code使用レビュー｜1ヶ月使ってわかった実力と活用法" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/claude-code-experience.html" style="color: var(--text-primary); text-decoration: none;">Claude Code使用レビュー｜1ヶ月使ってわかった実力と活用法</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            Claude Codeを1ヶ月使ってみた体験記。コード生成AIの実力、GitHub Copilotとの比較、実際の開発での活用シーン、料金対効果を詳しくレビューします。
+                        </p>
+                        <a href="articles/claude-code-experience.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="初心者でも分かるGitHub Pagesでの無料サイト公開｜完全ガイド" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/github-pages-guide.html" style="color: var(--text-primary); text-decoration: none;">初心者でも分かるGitHub Pagesでの無料サイト公開｜完全ガイド</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            GitHub Pagesを使えば完全無料でWebサイトを公開できます。アカウント作成からサイト公開まで、初心者向けに画像付きで詳しく解説。実際の運用経験から、つまずきやすいポイントも紹介します。
+                        </p>
+                        <a href="articles/github-pages-guide.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="GitHub Actionsで自動デプロイ環境を作る｜初心者向けCI/CD入門" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/github-actions-deploy.html" style="color: var(--text-primary); text-decoration: none;">GitHub Actionsで自動デプロイ環境を作る｜初心者向けCI/CD入門</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            GitHub Actionsで自動デプロイ環境を構築する方法。CI/CDの基礎、ワークフローファイルの書き方、GitHub Pagesへの自動デプロイ、エラー対処法を実例で解説します。
+                        </p>
+                        <a href="articles/github-actions-deploy.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="PWA実装の基礎 - WebアプリをPWA化する手順" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/pwa-implementation-guide.html" style="color: var(--text-primary); text-decoration: none;">PWA実装の基礎 - WebアプリをPWA化する手順</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            PWA（Progressive Web Apps）の実装方法を実践的に解説。Service Worker、manifest.json、キャッシュ戦略など、実際にMechaToraのツールをPWA化した経験をもとに、初心者でも分かる形で説明します。
+                        </p>
+                        <a href="articles/pwa-implementation-guide.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="API Rate Limitingの実装と対策 - 制限を超えないための実践テクニック" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/api-rate-limiting-practices.html" style="color: var(--text-primary); text-decoration: none;">API Rate Limitingの実装と対策 - 制限を超えないための実践テクニック</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            API Rate Limiting（レート制限）の実装方法と対策を実践的に解説。楽天APIや気象庁APIなど、実際のAPI連携で遭遇した制限への対処法、リトライロジック、キャッシュ戦略を紹介します。
+                        </p>
+                        <a href="articles/api-rate-limiting-practices.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="JavaScriptエラーハンドリングの実践 - 堅牢なコードを書く方法" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/javascript-error-handling.html" style="color: var(--text-primary); text-decoration: none;">JavaScriptエラーハンドリングの実践 - 堅牢なコードを書く方法</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            JavaScriptのエラーハンドリングとデバッグ手法を実践的に解説。try-catch、Promise、async/awaitのエラー処理、Chrome DevToolsの使い方、本番環境でのエラー監視まで、実際の経験をもとに紹介します。
+                        </p>
+                        <a href="articles/javascript-error-handling.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="個人開発で押さえるべきWebセキュリティ基礎" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/web-security-basics.html" style="color: var(--text-primary); text-decoration: none;">個人開発で押さえるべきWebセキュリティ基礎</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            Webセキュリティの基礎を実践的に解説。XSS、CSRF、SQLインジェクション、CORS設定など、個人開発で最低限押さえるべきセキュリティ対策を、実際の脆弱性事例とコード例で紹介します。
+                        </p>
+                        <a href="articles/web-security-basics.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="Web パフォーマンス最適化の実践 - サイトを爆速にする方法" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/web-performance-optimization.html" style="color: var(--text-primary); text-decoration: none;">Web パフォーマンス最適化の実践 - サイトを爆速にする方法</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            Webサイトのパフォーマンス最適化を実践的に解説。画像圧縮、遅延読み込み、CSS/JS最適化、Lighthouse改善など、MechaToraで実際に行った高速化手法を紹介します。
+                        </p>
+                        <a href="articles/web-performance-optimization.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="レスポンシブデザイン実装の基本｜メディアクエリとFlexboxで作る" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/responsive-design-basics.html" style="color: var(--text-primary); text-decoration: none;">レスポンシブデザイン実装の基本｜メディアクエリとFlexboxで作る</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            レスポンシブデザイン実装の基本。メディアクエリ、Flexbox、CSS Grid、モバイルファースト設計を実例で解説。初心者でもすぐに使える実践的なコード付き。
+                        </p>
+                        <a href="articles/responsive-design-basics.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="CSS Grid完全ガイド - 現代的なレイアウト実装の決定版" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/css-grid-layout-guide.html" style="color: var(--text-primary); text-decoration: none;">CSS Grid完全ガイド - 現代的なレイアウト実装の決定版</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            CSS Gridを使った現代的なレイアウト実装ガイド。Flexboxとの使い分け、グリッドの基本、レスポンシブ対応、実際のプロジェクト例まで、MechaToraで使っている実装をもとに解説します。
+                        </p>
+                        <a href="articles/css-grid-layout-guide.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="CookSuggestアプリ開発秘話｜料理提案ツールの技術と工夫" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/cook-suggest-development.html" style="color: var(--text-primary); text-decoration: none;">CookSuggestアプリ開発秘話｜料理提案ツールの技術と工夫</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            CookSuggestアプリの開発秘話。食材から料理を提案するWebアプリの設計思想、API連携の実装、ユーザー体験向上のための工夫を詳しく解説します。
+                        </p>
+                        <a href="articles/cook-suggest-development.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="地震情報モニターの技術解説｜リアルタイムデータ表示の実装" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/earthquake-monitor-tech.html" style="color: var(--text-primary); text-decoration: none;">地震情報モニターの技術解説｜リアルタイムデータ表示の実装</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            地震情報モニターアプリの技術解説。気象庁APIとの連携、リアルタイムデータ表示、WebSocketによる自動更新の実装方法を詳しく紹介します。
+                        </p>
+                        <a href="articles/earthquake-monitor-tech.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="資格試験カレンダーアプリ開発秘話｜試験日程を一括管理するツールの作り方" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/qualification-calendar-dev.html" style="color: var(--text-primary); text-decoration: none;">資格試験カレンダーアプリ開発秘話｜試験日程を一括管理するツールの作り方</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            資格試験カレンダーアプリの開発秘話。社労士資格を持つ開発者が、試験日程管理の課題を解決するために作ったWebアプリの技術的な工夫と学びを紹介します。
+                        </p>
+                        <a href="articles/qualification-calendar-dev.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="X投稿文ジェネレーター開発秘話｜ワードから自然な投稿文を生成する仕組み" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/x-post-generator-dev.html" style="color: var(--text-primary); text-decoration: none;">X投稿文ジェネレーター開発秘話｜ワードから自然な投稿文を生成する仕組み</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            X投稿文ジェネレーター開発秘話。2〜3個のワードから自然な投稿文を生成する仕組み、テンプレートエンジンの実装、ボケ要素の追加ロジックを詳しく解説します。
+                        </p>
+                        <a href="articles/x-post-generator-dev.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="完全無料でWebアプリを公開する方法｜サーバー代0円のフル活用術" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/free-webapp-guide.html" style="color: var(--text-primary); text-decoration: none;">完全無料でWebアプリを公開する方法｜サーバー代0円のフル活用術</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            完全無料でWebアプリを公開する方法。GitHub Pages、Netlify、Vercelなど無料ホスティングサービスの比較と、サーバー代0円で15個のアプリを運用する実践ノウハウを解説します。
+                        </p>
+                        <a href="articles/free-webapp-guide.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="宝くじ高額当選売場マップの開発 - 地図アプリ実装の実践" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/lottery-map-development.html" style="color: var(--text-primary); text-decoration: none;">宝くじ高額当選売場マップの開発 - 地図アプリ実装の実践</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            宝くじ高額当選売場マップの開発秘話。Leaflet.jsでの地図実装、CSVデータ処理、マーカークラスタリング、Firebase Hostingでのデプロイまで、実際の開発プロセスを詳しく解説します。
+                        </p>
+                        <a href="articles/lottery-map-development.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/tech-default.svg" alt="エンジニアのポートフォリオの作り方 - 実績で語る自己PR" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/portfolio-building-guide.html" style="color: var(--text-primary); text-decoration: none;">エンジニアのポートフォリオの作り方 - 実績で語る自己PR</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            エンジニアのポートフォリオ作成ガイド。GitHub Pages、実際のプロジェクト、技術スタック、デザインのコツまで、15個のツールを公開してきた経験から、効果的なポートフォリオの作り方を解説します。
+                        </p>
+                        <a href="articles/portfolio-building-guide.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+
             </section>
 
             <!-- キャリア・資格カテゴリ -->
             <section id="career" style="margin-bottom: 4rem;">
                 <h2 style="font-size: 1.75rem; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">👔 キャリア・資格</h2>
 
-                <p style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: 8px; color: var(--text-secondary);">
-                    記事を準備中です...
-                </p>
+                
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="30代からのプログラミング独学体験記｜働きながら15個のアプリを作るまで" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/30s-programming.html" style="color: var(--text-primary); text-decoration: none;">30代からのプログラミング独学体験記｜働きながら15個のアプリを作るまで</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            30代からプログラミングを始めた体験記。社労士として働きながら独学でWeb開発を習得し、15個のアプリを公開するまでの学習法、挫折ポイント、実践的なアドバイスを紹介します。
+                        </p>
+                        <a href="articles/30s-programming.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="社労士×エンジニアという働き方｜スキルを掛け合わせて市場価値を高める" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/hr-to-developer.html" style="color: var(--text-primary); text-decoration: none;">社労士×エンジニアという働き方｜スキルを掛け合わせて市場価値を高める</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            社労士×エンジニアという働き方。本業を続けながらプログラミングスキルを習得し、両方のスキルを掛け合わせて市場価値を高める方法を実体験から解説します。
+                        </p>
+                        <a href="articles/hr-to-developer.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="社労士試験合格体験記｜働きながら9ヶ月で合格した勉強法と時間管理術" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/sharoushi-pass.html" style="color: var(--text-primary); text-decoration: none;">社労士試験合格体験記｜働きながら9ヶ月で合格した勉強法と時間管理術</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            社会保険労務士試験合格体験記。働きながら9ヶ月で合格した勉強法、使用教材、時間管理術、科目別攻略法を詳しく解説します。
+                        </p>
+                        <a href="articles/sharoushi-pass.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="社労士資格を最大限活用する5つの方法 - 独立以外のキャリアパス" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/sharoushi-skill-utilization.html" style="color: var(--text-primary); text-decoration: none;">社労士資格を最大限活用する5つの方法 - 独立以外のキャリアパス</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            社労士資格を最大限活用する5つの方法を実体験から解説。独立開業だけでなく、企業内活用、副業、スキル掛け合わせ、IT×人事の融合など、多様なキャリアパスを紹介します。
+                        </p>
+                        <a href="articles/sharoushi-skill-utilization.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="働きながら独学で学び続ける時間管理術｜週17時間を確保する方法" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/time-management-selfstudy.html" style="color: var(--text-primary); text-decoration: none;">働きながら独学で学び続ける時間管理術｜週17時間を確保する方法</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            働きながら独学で学び続ける時間管理術。フルタイム勤務、週17時間の学習時間確保、朝活・通勤時間活用、モチベーション維持の方法を実体験から解説します。
+                        </p>
+                        <a href="articles/time-management-selfstudy.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="エンジニアとして学び続ける技術 - 継続的成長の秘訣" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/continuous-learning-engineer.html" style="color: var(--text-primary); text-decoration: none;">エンジニアとして学び続ける技術 - 継続的成長の秘訣</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            エンジニアとして継続的に学び続ける方法を実体験から解説。情報収集、技術選定、学習の習慣化、モチベーション維持など、2年間で15個のアプリを作り続けた秘訣を紹介します。
+                        </p>
+                        <a href="articles/continuous-learning-engineer.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="複数スキルの掛け合わせ戦略 - 100万人に1人の人材になる方法" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/multiple-skills-strategy.html" style="color: var(--text-primary); text-decoration: none;">複数スキルの掛け合わせ戦略 - 100万人に1人の人材になる方法</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            複数スキルを掛け合わせて希少価値を高める戦略を実体験から解説。社労士×エンジニア×データ分析の組み合わせで、100万人に1人の人材になる方法と、具体的な学習ロードマップを紹介します。
+                        </p>
+                        <a href="articles/multiple-skills-strategy.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="失敗しない技術書の選び方 - 50冊読んで分かったコツ" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/tech-books-selection-guide.html" style="color: var(--text-primary); text-decoration: none;">失敗しない技術書の選び方 - 50冊読んで分かったコツ</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            技術書の選び方を実体験から解説。初心者向け・中級者向けの見分け方、ハズレ本の特徴、効率的な読み方、おすすめの技術書まで、2年間で50冊以上読んだ経験をもとに紹介します。
+                        </p>
+                        <a href="articles/tech-books-selection-guide.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/career-default.svg" alt="独自ドメイン取得完全ガイド｜お名前.comでの取得からDNS設定まで" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/domain-registration.html" style="color: var(--text-primary); text-decoration: none;">独自ドメイン取得完全ガイド｜お名前.comでの取得からDNS設定まで</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            独自ドメイン取得の完全ガイド。お名前.comやムームードメインでのドメイン取得手順、DNS設定、GitHub Pagesとの連携方法を初心者向けに詳しく解説します。
+                        </p>
+                        <a href="articles/domain-registration.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+
             </section>
 
             <!-- データサイエンスカテゴリ -->
             <section id="datascience" style="margin-bottom: 4rem;">
                 <h2 style="font-size: 1.75rem; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">📊 データサイエンス</h2>
 
-                <p style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: 8px; color: var(--text-secondary);">
-                    記事を準備中です...
-                </p>
+                
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/datascience-default.svg" alt="R言語Tidyverseデータ分析入門｜社労士が実践するHRデータ分析の基礎" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/r-tidyverse-intro.html" style="color: var(--text-primary); text-decoration: none;">R言語Tidyverseデータ分析入門｜社労士が実践するHRデータ分析の基礎</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            R言語とTidyverseによるデータ分析入門。社労士がHR分析で実践した、dplyr・ggplot2を使ったデータ前処理と可視化の基礎を初心者向けに解説します。
+                        </p>
+                        <a href="articles/r-tidyverse-intro.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/datascience-default.svg" alt="ggplot2で始めるデータ可視化 - 美しいグラフを作る実践ガイド" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/ggplot2-data-visualization.html" style="color: var(--text-primary); text-decoration: none;">ggplot2で始めるデータ可視化 - 美しいグラフを作る実践ガイド</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            R言語のggplot2を使ったデータ可視化の基礎を実践的に解説。棒グラフ、折れ線グラフ、散布図、ヒートマップなど、実務で使える美しいグラフの作り方を人事データの実例で紹介します。
+                        </p>
+                        <a href="articles/ggplot2-data-visualization.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/datascience-default.svg" alt="Tidyverseで始めるデータクレンジング - 汚いデータを綺麗にする方法" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/data-cleaning-tidyverse.html" style="color: var(--text-primary); text-decoration: none;">Tidyverseで始めるデータクレンジング - 汚いデータを綺麗にする方法</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            R言語とTidyverseを使ったデータクレンジング（データ前処理）の実践ガイド。欠損値処理、重複削除、型変換、外れ値除去など、人事データの実例で解説します。
+                        </p>
+                        <a href="articles/data-cleaning-tidyverse.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+
             </section>
 
             <!-- 雑記カテゴリ -->
             <section id="misc" style="margin-bottom: 4rem;">
                 <h2 style="font-size: 1.75rem; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">📝 雑記</h2>
 
-                <p style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: 8px; color: var(--text-secondary);">
-                    記事を準備中です...
-                </p>
+                
+                <article class="article-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div class="article-thumbnail" style="flex-shrink: 0; width: 200px; height: 120px; border-radius: 4px; overflow: hidden;">
+                        <img src="images/misc-default.svg" alt="Git/GitHub実践ガイド - 個人開発で使えるワークフロー" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="article-content" style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">
+                            <a href="articles/git-github-workflow.html" style="color: var(--text-primary); text-decoration: none;">Git/GitHub実践ガイド - 個人開発で使えるワークフロー</a>
+                        </h3>
+                        <p style="margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                            Git/GitHubの実践的な使い方を解説。基本コマンド、ブランチ戦略、プルリクエスト、コンフリクト解決など、個人開発で実際に使っているワークフローを紹介します。
+                        </p>
+                        <a href="articles/git-github-workflow.html" style="display: inline-block; color: var(--primary-color); text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                            続きを読む →
+                        </a>
+                    </div>
+                </article>
+
             </section>
         </div>
     </main>
@@ -125,5 +609,6 @@
             </div>
         </div>
     </footer>
+    <script src="cookie-banner.js"></script>
 </body>
 </html>
