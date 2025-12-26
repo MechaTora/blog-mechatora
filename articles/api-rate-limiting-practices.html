@@ -36,6 +36,10 @@
     <header>
         <div class="header-content">
             <h1><a href="../index.html">MechaToraのブログ</a></h1>
+        <div class="article-hero" style="margin: 2rem 0; border-radius: 8px; overflow: hidden;">
+            <img src="../images/tech-default.svg" alt="記事のアイキャッチ画像" style="width: 100%; height: auto; display: block;">
+        </div>
+
             <nav>
                 <a href="../index.html">ホーム</a>
                 <a href="../articles.html">記事一覧</a>
@@ -96,6 +100,10 @@
             <p>この時、日本酒検索アプリは完全に停止し、ユーザーに「データ取得に失敗しました」と表示されてしまいました。</p>
 
             <h2>Rate Limitingの確認方法</h2>
+        <div style="margin: 1.5rem 0; text-align: center;">
+            <img src="../images/tech-default.svg" alt="セクション画像" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </div>
+
 
             <h3>レスポンスヘッダーで確認</h3>
             <p>多くのAPIは、レスポンスヘッダーで現在の使用状況を返します：</p>
@@ -206,6 +214,10 @@ fetchWithExponentialBackoff('https://api.example.com/data')
   .catch(error => console.error(error));</code></pre>
 
             <h2>実装パターン2：リクエストキューイング</h2>
+        <div style="margin: 1.5rem 0; text-align: center;">
+            <img src="../images/tech-default.svg" alt="セクション画像" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </div>
+
 
             <h3>キュー管理クラス</h3>
             <p>複数のリクエストをキューに入れて、Rate Limitに収まるように制御します：</p>
