@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://blog.mechatora.com/sitemap.xml
+
+# 管理画面は非公開
+Disallow: /admin/
+
+# テンプレートファイルは非公開
+Disallow: /_article-template.html
