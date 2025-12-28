@@ -217,4 +217,66 @@ ${grouped.misc.map(generateArticleCard).join('\n')}
   console.log(`✓ articles.html を生成しました (${articles.length}記事)`);
 }
 
-generateArticlesPage().catch(console.error);
+// index.htmlの最新記事セクション生成
+function generateLatestArticleCard(article, index) {
+  const formattedDate = formatDate(article.date);
+  const excerpt = article.description.substring(0, 150) + '...';
+
+  return `                <!-- 記事カード${index + 1} -->
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-category">${article.category}</span>
+                        <time datetime="${article.date}">${formattedDate}</time>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="articles/${article.filename}">${article.title}</a>
+                    </h3>
+                    <p class="article-excerpt">
+                        ${excerpt}
+                    </p>
+                    <a href="articles/${article.filename}" class="read-more">続きを読む →</a>
+                </article>`;
+}
+
+async function updateIndexPage() {
+  const articles = await getAllArticles();
+  const latestArticles = articles.slice(0, 5);
+
+  const indexPath = path.join(__dirname, 'index.html');
+  let indexContent = fs.readFileSync(indexPath, 'utf-8');
+
+  // 最新記事セクションを生成
+  const latestArticlesHTML = latestArticles.map(generateLatestArticleCard).join('\n\n');
+
+  // index.htmlの最新記事セクションを置き換え
+  const sectionStart = '            <!-- 最新記事セクション -->';
+  const sectionEnd = '            <!-- カテゴリーセクション -->';
+
+  const startIndex = indexContent.indexOf(sectionStart);
+  const endIndex = indexContent.indexOf(sectionEnd);
+
+  if (startIndex !== -1 && endIndex !== -1) {
+    const newSection = `            <!-- 最新記事セクション -->
+            <section>
+                <h2 class="section-title">📝 最新記事</h2>
+
+${latestArticlesHTML}
+
+            </section>
+
+            `;
+
+    indexContent = indexContent.substring(0, startIndex) + newSection + indexContent.substring(endIndex);
+    fs.writeFileSync(indexPath, indexContent, 'utf-8');
+    console.log(`✓ index.html を更新しました (最新${latestArticles.length}記事)`);
+  } else {
+    console.log('⚠ index.htmlの最新記事セクションが見つかりませんでした');
+  }
+}
+
+async function main() {
+  await generateArticlesPage();
+  await updateIndexPage();
+}
+
+main().catch(console.error);
