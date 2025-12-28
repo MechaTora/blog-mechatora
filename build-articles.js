@@ -54,6 +54,8 @@ function generateHTML(data, content, filename) {
     <title>${title} | MechaToraのブログ</title>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="canonical" href="https://blog.mechatora.com/articles/${htmlFilename}">
+    <link rel="alternate" type="application/rss+xml" title="MechaToraのブログ" href="https://blog.mechatora.com/feed.xml">
 
     <!-- 構造化データ -->
     <script type="application/ld+json">

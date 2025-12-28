@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "MechaToraのブログ - Markdown to HTML converter",
   "scripts": {
-    "build": "node build-articles.js && node generate-articles-list.js"
+    "build": "node build-articles.js && node generate-articles-list.js && node generate-sitemap.js && node generate-rss.js"
   },
   "dependencies": {
     "markdown-it": "^14.0.0",
