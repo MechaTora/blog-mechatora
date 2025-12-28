@@ -1,90 +1,242 @@
 [
   {
+    "title": "エンジニアとして学び続ける技術 - 継続的成長の秘訣",
+    "date": "2025-11-05",
+    "category": "技術・開発",
+    "description": "エンジニアとして継続的に学び続ける方法を実体験から解説。情報収集、技術選定、学習の習慣化、モチベーション維持など、2年間で15個のアプリを作り続けた秘訣を紹介します。",
+    "filename": "continuous-learning-engineer.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "Web パフォーマンス最適化の実践 - サイトを爆速にする方法",
+    "date": "2025-11-04",
+    "category": "技術・開発",
+    "description": "Webサイトのパフォーマンス最適化を実践的に解説。画像圧縮、遅延読み込み、CSS/JS最適化、Lighthouse改善など、MechaToraで実際に行った高速化手法を紹介します。",
+    "filename": "web-performance-optimization.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "Git/GitHub実践ガイド - 個人開発で使えるワークフロー",
+    "date": "2025-11-03",
+    "category": "技術・開発",
+    "description": "Git/GitHubの実践的な使い方を解説。基本コマンド、ブランチ戦略、プルリクエスト、コンフリクト解決など、個人開発で実際に使っているワークフローを紹介します。",
+    "filename": "git-github-workflow.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "複数スキルの掛け合わせ戦略 - 100万人に1人の人材になる方法",
+    "date": "2025-11-02",
+    "category": "技術・開発",
+    "description": "複数スキルを掛け合わせて希少価値を高める戦略を実体験から解説。社労士×エンジニア×データ分析の組み合わせで、100万人に1人の人材になる方法と、具体的な学習ロードマップを紹介します。",
+    "filename": "multiple-skills-strategy.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "CSS Grid完全ガイド - 現代的なレイアウト実装の決定版",
+    "date": "2025-11-01",
+    "category": "技術・開発",
+    "description": "CSS Gridを使った現代的なレイアウト実装ガイド。Flexboxとの使い分け、グリッドの基本、レスポンシブ対応、実際のプロジェクト例まで、MechaToraで使っている実装をもとに解説します。",
+    "filename": "css-grid-layout-guide.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "Tidyverseで始めるデータクレンジング - 汚いデータを綺麗にする方法",
+    "date": "2025-10-31",
+    "category": "技術・開発",
+    "description": "R言語とTidyverseを使ったデータクレンジング（データ前処理）の実践ガイド。欠損値処理、重複削除、型変換、外れ値除去など、人事データの実例で解説します。",
+    "filename": "data-cleaning-tidyverse.html",
+    "thumbnail": "../images/datascience-default.svg"
+  },
+  {
+    "title": "エンジニアのポートフォリオの作り方 - 実績で語る自己PR",
+    "date": "2025-10-30",
+    "category": "技術・開発",
+    "description": "エンジニアのポートフォリオ作成ガイド。GitHub Pages、実際のプロジェクト、技術スタック、デザインのコツまで、15個のツールを公開してきた経験から、効果的なポートフォリオの作り方を解説します。",
+    "filename": "portfolio-building-guide.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "宝くじ高額当選売場マップの開発 - 地図アプリ実装の実践",
+    "date": "2025-10-29",
+    "category": "技術・開発",
+    "description": "宝くじ高額当選売場マップの開発秘話。Leaflet.jsでの地図実装、CSVデータ処理、マーカークラスタリング、Firebase Hostingでのデプロイまで、実際の開発プロセスを詳しく解説します。",
+    "filename": "lottery-map-development.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "個人開発で押さえるべきWebセキュリティ基礎",
+    "date": "2025-10-28",
+    "category": "技術・開発",
+    "description": "Webセキュリティの基礎を実践的に解説。XSS、CSRF、SQLインジェクション、CORS設定など、個人開発で最低限押さえるべきセキュリティ対策を、実際の脆弱性事例とコード例で紹介します。",
+    "filename": "web-security-basics.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "失敗しない技術書の選び方 - 50冊読んで分かったコツ",
+    "date": "2025-10-27",
+    "category": "技術・開発",
+    "description": "技術書の選び方を実体験から解説。初心者向け・中級者向けの見分け方、ハズレ本の特徴、効率的な読み方、おすすめの技術書まで、2年間で50冊以上読んだ経験をもとに紹介します。",
+    "filename": "tech-books-selection-guide.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "JavaScriptエラーハンドリングの実践 - 堅牢なコードを書く方法",
+    "date": "2025-10-26",
+    "category": "技術・開発",
+    "description": "JavaScriptのエラーハンドリングとデバッグ手法を実践的に解説。try-catch、Promise、async/awaitのエラー処理、Chrome DevToolsの使い方、本番環境でのエラー監視まで、実際の経験をもとに紹介します。",
+    "filename": "javascript-error-handling.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "ggplot2で始めるデータ可視化 - 美しいグラフを作る実践ガイド",
+    "date": "2025-10-25",
+    "category": "技術・開発",
+    "description": "R言語のggplot2を使ったデータ可視化の基礎を実践的に解説。棒グラフ、折れ線グラフ、散布図、ヒートマップなど、実務で使える美しいグラフの作り方を人事データの実例で紹介します。",
+    "filename": "ggplot2-data-visualization.html",
+    "thumbnail": "../images/datascience-default.svg"
+  },
+  {
+    "title": "社労士資格を最大限活用する5つの方法 - 独立以外のキャリアパス",
+    "date": "2025-10-24",
+    "category": "技術・開発",
+    "description": "社労士資格を最大限活用する5つの方法を実体験から解説。独立開業だけでなく、企業内活用、副業、スキル掛け合わせ、IT×人事の融合など、多様なキャリアパスを紹介します。",
+    "filename": "sharoushi-skill-utilization.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "API Rate Limitingの実装と対策 - 制限を超えないための実践テクニック",
+    "date": "2025-10-23",
+    "category": "技術・開発",
+    "description": "API Rate Limiting（レート制限）の実装方法と対策を実践的に解説。楽天APIや気象庁APIなど、実際のAPI連携で遭遇した制限への対処法、リトライロジック、キャッシュ戦略を紹介します。",
+    "filename": "api-rate-limiting-practices.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "PWA実装の基礎 - WebアプリをPWA化する手順",
+    "date": "2025-10-22",
+    "category": "技術・開発",
+    "description": "PWA（Progressive Web Apps）の実装方法を実践的に解説。Service Worker、manifest.json、キャッシュ戦略など、実際にMechaToraのツールをPWA化した経験をもとに、初心者でも分かる形で説明します。",
+    "filename": "pwa-implementation-guide.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
     "title": "初心者でも分かるGitHub Pagesでの無料サイト公開｜完全ガイド",
     "date": "2025-01-15",
     "category": "技術・開発",
-    "description": "GitHub Pagesを使えば完全無料でWebサイトを公開できます。アカウント作成からサイト公開まで、初心者向けに画像付きで詳しく解説。",
+    "description": "GitHub Pagesを使えば完全無料でWebサイトを公開できます。アカウント作成からサイト公開まで、初心者向けに画像付きで詳しく解説。実際の運用経験から、つまずきやすいポイントも紹介します。",
     "filename": "github-pages-guide.html",
     "thumbnail": "../images/tech-default.svg"
   },
   {
-    "title": "資格試験カレンダーアプリ開発秘話：40種類の試験データをどう管理したか",
-    "date": "2025-01-12",
-    "category": "技術・開発",
-    "description": "40種類以上の国家資格・民間資格の試験日程を一元管理する仕組みを、どう設計・実装したのか。",
-    "filename": "qualification-calendar-dev.html",
-    "thumbnail": "../images/tech-default.svg"
-  },
-  {
-    "title": "CookSuggestアプリ開発秘話：1000レシピDBをどう構築したか",
-    "date": "2025-01-10",
-    "category": "技術・開発",
-    "description": "1000件以上のレシピデータベースを構築。食材検索アルゴリズムの設計、レシピデータの正規化、検索速度の最適化など。",
-    "filename": "cook-suggest-development.html",
-    "thumbnail": "../images/tech-default.svg"
-  },
-  {
-    "title": "地震モニターアプリ：リアルタイム更新の技術的仕組み",
-    "date": "2025-01-08",
-    "category": "技術・開発",
-    "description": "気象庁APIを活用した地震情報アプリの開発。API連携の実装方法、データ取得間隔の最適化など。",
-    "filename": "earthquake-monitor-tech.html",
-    "thumbnail": "../images/tech-default.svg"
-  },
-  {
-    "title": "R言語Tidyverseで始めるデータ分析入門｜非エンジニアでも3ヶ月でマスター",
-    "date": "2025-01-05",
+    "title": "R言語Tidyverseデータ分析入門｜社労士が実践するHRデータ分析の基礎",
+    "date": "2025-01-14",
     "category": "データサイエンス",
-    "description": "プログラミング未経験でもデータ分析ができる！R言語とTidyverseパッケージを使った、実務で使えるデータ分析の始め方。",
+    "description": "R言語とTidyverseによるデータ分析入門。社労士がHR分析で実践した、dplyr・ggplot2を使ったデータ前処理と可視化の基礎を初心者向けに解説します。",
     "filename": "r-tidyverse-intro.html",
     "thumbnail": "../images/datascience-default.svg"
   },
   {
-    "title": "社労士試験に独学で一発合格した勉強法｜働きながら800時間",
+    "title": "CookSuggestアプリ開発秘話｜料理提案ツールの技術と工夫",
+    "date": "2025-01-12",
+    "category": "技術・開発",
+    "description": "CookSuggestアプリの開発秘話。食材から料理を提案するWebアプリの設計思想、API連携の実装、ユーザー体験向上のための工夫を詳しく解説します。",
+    "filename": "cook-suggest-development.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "資格試験カレンダーアプリ開発秘話｜試験日程を一括管理するツールの作り方",
+    "date": "2025-01-10",
+    "category": "技術・開発",
+    "description": "資格試験カレンダーアプリの開発秘話。社労士資格を持つ開発者が、試験日程管理の課題を解決するために作ったWebアプリの技術的な工夫と学びを紹介します。",
+    "filename": "qualification-calendar-dev.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "レスポンシブデザイン実装の基本｜メディアクエリとFlexboxで作る",
+    "date": "2025-01-09",
+    "category": "技術・開発",
+    "description": "レスポンシブデザイン実装の基本。メディアクエリ、Flexbox、CSS Grid、モバイルファースト設計を実例で解説。初心者でもすぐに使える実践的なコード付き。",
+    "filename": "responsive-design-basics.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "地震情報モニターの技術解説｜リアルタイムデータ表示の実装",
+    "date": "2025-01-08",
+    "category": "技術・開発",
+    "description": "地震情報モニターアプリの技術解説。気象庁APIとの連携、リアルタイムデータ表示、WebSocketによる自動更新の実装方法を詳しく紹介します。",
+    "filename": "earthquake-monitor-tech.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "GitHub Actionsで自動デプロイ環境を作る｜初心者向けCI/CD入門",
+    "date": "2025-01-07",
+    "category": "技術・開発",
+    "description": "GitHub Actionsで自動デプロイ環境を構築する方法。CI/CDの基礎、ワークフローファイルの書き方、GitHub Pagesへの自動デプロイ、エラー対処法を実例で解説します。",
+    "filename": "github-actions-deploy.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "X投稿文ジェネレーター開発秘話｜ワードから自然な投稿文を生成する仕組み",
+    "date": "2025-01-05",
+    "category": "技術・開発",
+    "description": "X投稿文ジェネレーター開発秘話。2〜3個のワードから自然な投稿文を生成する仕組み、テンプレートエンジンの実装、ボケ要素の追加ロジックを詳しく解説します。",
+    "filename": "x-post-generator-dev.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "働きながら独学で学び続ける時間管理術｜週17時間を確保する方法",
     "date": "2025-01-03",
     "category": "キャリア・資格",
-    "description": "働きながら社労士試験に一発合格した勉強法を公開。使用教材、学習スケジュール、科目別攻略法を詳しく解説。",
-    "filename": "sharoushi-pass.html",
+    "description": "働きながら独学で学び続ける時間管理術。フルタイム勤務、週17時間の学習時間確保、朝活・通勤時間活用、モチベーション維持の方法を実体験から解説します。",
+    "filename": "time-management-selfstudy.html",
     "thumbnail": "../images/career-default.svg"
   },
   {
-    "title": "30代未経験からプログラミングを始めて感じたこと",
-    "date": "2024-12-28",
-    "category": "キャリア・資格",
-    "description": "30代でプログラミングを始めた経験談。学習の進め方、つまずいたポイント、続けるコツを紹介。",
-    "filename": "30s-programming.html",
-    "thumbnail": "../images/career-default.svg"
-  },
-  {
-    "title": "Claude Codeを使ってみた感想｜実際の開発体験レビュー",
+    "title": "社労士×エンジニアという働き方｜スキルを掛け合わせて市場価値を高める",
     "date": "2024-12-25",
+    "category": "キャリア・資格",
+    "description": "社労士×エンジニアという働き方。本業を続けながらプログラミングスキルを習得し、両方のスキルを掛け合わせて市場価値を高める方法を実体験から解説します。",
+    "filename": "hr-to-developer.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "独自ドメイン取得完全ガイド｜お名前.comでの取得からDNS設定まで",
+    "date": "2024-12-20",
     "category": "技術・開発",
-    "description": "AIコーディングアシスタント「Claude Code」の実体験レビュー。できること、できないこと、使いこなすコツ。",
+    "description": "独自ドメイン取得の完全ガイド。お名前.comやムームードメインでのドメイン取得手順、DNS設定、GitHub Pagesとの連携方法を初心者向けに詳しく解説します。",
+    "filename": "domain-registration.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "Claude Code使用レビュー｜1ヶ月使ってわかった実力と活用法",
+    "date": "2024-12-15",
+    "category": "技術・開発",
+    "description": "Claude Codeを1ヶ月使ってみた体験記。コード生成AIの実力、GitHub Copilotとの比較、実際の開発での活用シーン、料金対効果を詳しくレビューします。",
     "filename": "claude-code-experience.html",
     "thumbnail": "../images/tech-default.svg"
   },
   {
-    "title": "独自ドメイン取得から設定まで｜お名前.comで始める完全ガイド",
-    "date": "2024-12-20",
+    "title": "完全無料でWebアプリを公開する方法｜サーバー代0円のフル活用術",
+    "date": "2024-12-05",
     "category": "技術・開発",
-    "description": "独自ドメインの取得方法からDNS設定まで、初心者向けに詳しく解説。お名前.comでの具体的な手順を画像付きで紹介。",
-    "filename": "domain-registration.html",
-    "thumbnail": "../images/tech-default.svg"
-  },
-  {
-    "title": "完全無料でWebアプリを公開する方法｜GitHub Pages + Netlify徹底比較",
-    "date": "2024-12-15",
-    "category": "技術・開発",
-    "description": "完全無料でWebアプリを公開できるGitHub PagesとNetlifyを徹底比較。それぞれの特徴、メリット・デメリットを解説。",
+    "description": "完全無料でWebアプリを公開する方法。GitHub Pages、Netlify、Vercelなど無料ホスティングサービスの比較と、サーバー代0円で15個のアプリを運用する実践ノウハウを解説します。",
     "filename": "free-webapp-guide.html",
     "thumbnail": "../images/tech-default.svg"
   },
   {
-    "title": "社労士として働くリアル｜年収・仕事内容・やりがい",
-    "date": "2024-12-10",
+    "title": "30代からのプログラミング独学体験記｜働きながら15個のアプリを作るまで",
+    "date": "2024-11-28",
     "category": "キャリア・資格",
-    "description": "社会保険労務士の仕事内容、年収、やりがい、大変なことを現役社労士が本音で語ります。",
-    "filename": "hr-to-developer.html",
+    "description": "30代からプログラミングを始めた体験記。社労士として働きながら独学でWeb開発を習得し、15個のアプリを公開するまでの学習法、挫折ポイント、実践的なアドバイスを紹介します。",
+    "filename": "30s-programming.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "社労士試験合格体験記｜働きながら9ヶ月で合格した勉強法と時間管理術",
+    "date": "2024-11-15",
+    "category": "キャリア・資格",
+    "description": "社会保険労務士試験合格体験記。働きながら9ヶ月で合格した勉強法、使用教材、時間管理術、科目別攻略法を詳しく解説します。",
+    "filename": "sharoushi-pass.html",
     "thumbnail": "../images/career-default.svg"
   }
 ]
