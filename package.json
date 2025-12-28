@@ -1,0 +1,13 @@
+{
+  "name": "blog-mechatora",
+  "version": "1.0.0",
+  "description": "MechaToraのブログ - Markdown to HTML converter",
+  "scripts": {
+    "build": "node build-articles.js"
+  },
+  "dependencies": {
+    "markdown-it": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "fs-extra": "^11.2.0"
+  }
+}
