@@ -1,0 +1,90 @@
+[
+  {
+    "title": "初心者でも分かるGitHub Pagesでの無料サイト公開｜完全ガイド",
+    "date": "2025-01-15",
+    "category": "技術・開発",
+    "description": "GitHub Pagesを使えば完全無料でWebサイトを公開できます。アカウント作成からサイト公開まで、初心者向けに画像付きで詳しく解説。",
+    "filename": "github-pages-guide.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "資格試験カレンダーアプリ開発秘話：40種類の試験データをどう管理したか",
+    "date": "2025-01-12",
+    "category": "技術・開発",
+    "description": "40種類以上の国家資格・民間資格の試験日程を一元管理する仕組みを、どう設計・実装したのか。",
+    "filename": "qualification-calendar-dev.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "CookSuggestアプリ開発秘話：1000レシピDBをどう構築したか",
+    "date": "2025-01-10",
+    "category": "技術・開発",
+    "description": "1000件以上のレシピデータベースを構築。食材検索アルゴリズムの設計、レシピデータの正規化、検索速度の最適化など。",
+    "filename": "cook-suggest-development.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "地震モニターアプリ：リアルタイム更新の技術的仕組み",
+    "date": "2025-01-08",
+    "category": "技術・開発",
+    "description": "気象庁APIを活用した地震情報アプリの開発。API連携の実装方法、データ取得間隔の最適化など。",
+    "filename": "earthquake-monitor-tech.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "R言語Tidyverseで始めるデータ分析入門｜非エンジニアでも3ヶ月でマスター",
+    "date": "2025-01-05",
+    "category": "データサイエンス",
+    "description": "プログラミング未経験でもデータ分析ができる！R言語とTidyverseパッケージを使った、実務で使えるデータ分析の始め方。",
+    "filename": "r-tidyverse-intro.html",
+    "thumbnail": "../images/datascience-default.svg"
+  },
+  {
+    "title": "社労士試験に独学で一発合格した勉強法｜働きながら800時間",
+    "date": "2025-01-03",
+    "category": "キャリア・資格",
+    "description": "働きながら社労士試験に一発合格した勉強法を公開。使用教材、学習スケジュール、科目別攻略法を詳しく解説。",
+    "filename": "sharoushi-pass.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "30代未経験からプログラミングを始めて感じたこと",
+    "date": "2024-12-28",
+    "category": "キャリア・資格",
+    "description": "30代でプログラミングを始めた経験談。学習の進め方、つまずいたポイント、続けるコツを紹介。",
+    "filename": "30s-programming.html",
+    "thumbnail": "../images/career-default.svg"
+  },
+  {
+    "title": "Claude Codeを使ってみた感想｜実際の開発体験レビュー",
+    "date": "2024-12-25",
+    "category": "技術・開発",
+    "description": "AIコーディングアシスタント「Claude Code」の実体験レビュー。できること、できないこと、使いこなすコツ。",
+    "filename": "claude-code-experience.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "独自ドメイン取得から設定まで｜お名前.comで始める完全ガイド",
+    "date": "2024-12-20",
+    "category": "技術・開発",
+    "description": "独自ドメインの取得方法からDNS設定まで、初心者向けに詳しく解説。お名前.comでの具体的な手順を画像付きで紹介。",
+    "filename": "domain-registration.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "完全無料でWebアプリを公開する方法｜GitHub Pages + Netlify徹底比較",
+    "date": "2024-12-15",
+    "category": "技術・開発",
+    "description": "完全無料でWebアプリを公開できるGitHub PagesとNetlifyを徹底比較。それぞれの特徴、メリット・デメリットを解説。",
+    "filename": "free-webapp-guide.html",
+    "thumbnail": "../images/tech-default.svg"
+  },
+  {
+    "title": "社労士として働くリアル｜年収・仕事内容・やりがい",
+    "date": "2024-12-10",
+    "category": "キャリア・資格",
+    "description": "社会保険労務士の仕事内容、年収、やりがい、大変なことを現役社労士が本音で語ります。",
+    "filename": "hr-to-developer.html",
+    "thumbnail": "../images/career-default.svg"
+  }
+]
