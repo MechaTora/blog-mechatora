@@ -5,8 +5,24 @@
     <link>https://blog.mechatora.com/</link>
     <description>社労士×エンジニアのMechaToraが、Web開発・技術・キャリア・データサイエンスについて発信するブログ</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 29 Dec 2025 23:22:28 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 Jan 2026 16:12:27 GMT</lastBuildDate>
     <atom:link href="https://blog.mechatora.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>日本酒サジェストでリクエストをもらい追加作業🐯</title>
+      <link>https://blog.mechatora.com/articles/2026-01-02-日本酒サジェストでリクエストをもらい追加作業🐯.html</link>
+      <guid>https://blog.mechatora.com/articles/2026-01-02-日本酒サジェストでリクエストをもらい追加作業🐯.html</guid>
+      <description>Xで宣伝してみると・・・</description>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>日本酒サジェスVer2に向けたデータ整理</title>
+      <link>https://blog.mechatora.com/articles/2026-01-01-日本酒サジェスver2に向けたデータ整理.html</link>
+      <guid>https://blog.mechatora.com/articles/2026-01-01-日本酒サジェスver2に向けたデータ整理.html</guid>
+      <description>元旦の挨拶とやっていること</description>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
 
     <item>
       <title>エンジニアのための簿記入門｜ITと会計の融合で市場価値を10倍にする方法</title>
@@ -150,22 +166,6 @@
       <guid>https://blog.mechatora.com/articles/web-security-basics.html</guid>
       <description>Webセキュリティの基礎を実践的に解説。XSS、CSRF、SQLインジェクション、CORS設定など、個人開発で最低限押さえるべきセキュリティ対策を、実際の脆弱性事例とコード例で紹介します。</description>
       <pubDate>Tue, 28 Oct 2025 00:00:00 GMT</pubDate>
-    </item>
-
-    <item>
-      <title>失敗しない技術書の選び方 - 50冊読んで分かったコツ</title>
-      <link>https://blog.mechatora.com/articles/tech-books-selection-guide.html</link>
-      <guid>https://blog.mechatora.com/articles/tech-books-selection-guide.html</guid>
-      <description>技術書の選び方を実体験から解説。初心者向け・中級者向けの見分け方、ハズレ本の特徴、効率的な読み方、おすすめの技術書まで、2年間で50冊以上読んだ経験をもとに紹介します。</description>
-      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
-    </item>
-
-    <item>
-      <title>JavaScriptエラーハンドリングの実践 - 堅牢なコードを書く方法</title>
-      <link>https://blog.mechatora.com/articles/javascript-error-handling.html</link>
-      <guid>https://blog.mechatora.com/articles/javascript-error-handling.html</guid>
-      <description>JavaScriptのエラーハンドリングとデバッグ手法を実践的に解説。try-catch、Promise、async/awaitのエラー処理、Chrome DevToolsの使い方、本番環境でのエラー監視まで、実際の経験をもとに紹介します。</description>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate>
     </item>
 
   </channel>
